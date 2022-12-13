@@ -45,6 +45,7 @@
     "workbox-streams": "^5.1.4"
   },
   "scripts": {
+    "cap-build": "set NODE_ENV=dev && node ./src/env/script.js && npm run build", 
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --transformIgnorePatterns 'node_modules/(?!(@ionic/react|@ionic/react-router|@ionic/core|@stencil/core|ionicons)/)'",
