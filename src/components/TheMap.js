@@ -21,8 +21,7 @@ const TheMap: React.FC = () => {
     return allData
   }, [notionToGeoJSON()]);
 
-  // get users location to center on that on first load.
-  console.log(ENV.REACT_APP_MAP_KEY)
+  // get users location to center on that on first load
   
   return (
      <Map
@@ -43,9 +42,9 @@ const TheMap: React.FC = () => {
          id="quiktrip-locations"
          type="geojson" 
          data={data} >
-       {/*
+       
        <Layer {...layerStyle} />
-       */}
+       
        </Source>
     </Map>    
   )
