@@ -1,7 +1,10 @@
+// @ts-nocheck
+import { useMemo } from "react"
 import Map, { GeolocateControl, Source, Layer } from "react-map-gl";
-import { notionToGeoJSON } from "../../resources/data"
+import { notionToGeoJSON } from "../data"
 
 const TheMap: React.FC = () => {
+  console.log(JSON.stringify(import.meta), "HERE")
   const layerStyle = {
     id: 'point',
     type: 'circle',
@@ -36,11 +39,12 @@ const TheMap: React.FC = () => {
        <Source 
          id="quiktrip-locations"
          type="geojson" 
-         data={notionToGeoJSON()} >
+         data={data} >
        <Layer {...layerStyle} />
        </Source>
     </Map>    
   )
 }
+
 
 export default TheMap;

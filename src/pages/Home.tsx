@@ -1,5 +1,6 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonSearchbar, IonItem, IonLabel, IonToggle, IonModal, IonList, IonAccordion, IonAccordionGroup } from '@ionic/react';
 import { useRef, useEffect } from "react"
+import TheMap from '../components/TheMap'
 import './Home.css';
 
 const Home: React.FC = () => {
@@ -16,6 +17,7 @@ const Home: React.FC = () => {
   
   return (
     <IonPage>
+      <TheMap />
       <IonContent fullscreen>
         <IonModal canDismiss={false} ref={modal} isOpen={true} initialBreakpoint={0.25} breakpoints={[0, 0.25, 0.5, 0.75]}>
           <IonContent className="ion-padding">
