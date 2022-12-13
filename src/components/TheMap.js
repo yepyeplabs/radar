@@ -2,9 +2,10 @@
 import { useMemo } from "react"
 import Map, { GeolocateControl, Source, Layer } from "react-map-gl";
 import { notionToGeoJSON } from "../data"
+import "./TheMap.css"
 
 const TheMap: React.FC = () => {
-  console.log(JSON.stringify(import.meta), "HERE")
+  console.log(notionToGeoJSON())
   const layerStyle = {
     id: 'point',
     type: 'circle',
@@ -24,7 +25,7 @@ const TheMap: React.FC = () => {
   return (
      <Map
         style={{height: '100vh', width: '100vw'}}
-       mapboxAccessToken={import.meta.env.VITE_MAP_KEY}
+       mapboxAccessToken=""
        initialViewState={{
           longitude: -100,
           latitude: 40,
@@ -40,7 +41,9 @@ const TheMap: React.FC = () => {
          id="quiktrip-locations"
          type="geojson" 
          data={data} >
+       {/*
        <Layer {...layerStyle} />
+       */}
        </Source>
     </Map>    
   )
